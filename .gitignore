@@ -1,0 +1,18 @@
+node_modules/
+npm-debug.log
+.sass-cache/
+bower_components/
+
+# Source files (built output is at root)
+dev/
+gulp_tasks/
+gulpfile.js
+package.json
+awesome-resume/
+developerFolio/
+screenshots/
+build/
+.csscomb.json
+.editorconfig
+LICENSE.md
+README.md

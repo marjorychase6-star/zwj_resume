@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>赵汶江 | AI 工具应用与产品设计</title>
+  <meta name="description" content="赵汶江的个人简历网页 - AI工具应用与产品设计，擅长AI工具应用、内容运营、产品设计">
+  <meta name="keywords" content="赵汶江,简历,AI工具,PromptVault,实习经历">
+  <meta name="author" content="赵汶江">
+  <meta property="og:title" content="赵汶江 | AI 工具应用与产品设计">
+  <meta property="og:description" content="天津大学硕士在读，擅长AI工具应用与产品设计">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ===== CSS Variables (Original Template Colors) ===== */
+    :root {
+      --bg-deep: #ffffff;
+      --bg-surface: #ecf0f1;
+      --bg-card: #ffffff;
+      --bg-hover: #f8f9fa;
+      --accent-blue: #2c3e50;
+      --accent-cyan: #ffa726;
+      --accent-amber: #ffa726;
+      --accent-emerald: #27ae60;
+      --text-primary: #2c3e50;
+      --text-secondary: #7f8c8d;
+      --text-muted: #95a5a6;
+      --border-subtle: rgba(44,62,80,0.1);
+      --glow-blue: rgba(44,62,80,0.15);
+      --glow-amber: rgba(255,167,38,0.3);
+    }
+
+    /* ===== Reset & Base ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ::selection {
+      color: #ecf0f1;
+      background-color: #bdc3c7;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #fff url(static/images/bg-pattern.jpg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== Typography ===== */
+    h1, h2, h3, h4 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    /* ===== Navigation ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 20px 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav.scrolled {
+      padding: 12px 0;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 1px 2px -1px #2c3e50;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span {
+      color: var(--accent-amber);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.5s ease;
+      position: relative;
+      border-bottom: 1px dashed var(--text-secondary);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-amber);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+      border-bottom: none;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255,167,38,0.08), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 50%, rgba(44,62,80,0.03), transparent);
+    }
+
+    .hero-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        linear-gradient(rgba(44,62,80,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(44,62,80,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-photo img {
+      width: 220px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 2px 8px 16px -2px rgba(44,62,80,0.3);
+      border: 4px solid #fff;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(255,167,38,0.1);
+      border: 1px solid rgba(255,167,38,0.2);
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent-amber);
+      margin-bottom: 32px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-label::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--accent-emerald);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 88px);
+      font-weight: 800;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
+      color: var(--text-primary);
+    }
+
+    .hero h1 span {
+      color: var(--accent-amber);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(18px, 2.5vw, 24px);
+      color: var(--text-secondary);
+      font-weight: 300;
+      margin-bottom: 48px;
+      max-width: 600px;
+    }
+
+    .hero-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .hero-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      background: #fff;
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      transition: all 0.3s ease;
+      box-shadow: 2px 2px 4px -2px rgba(44,62,80,0.2);
+    }
+
+    .hero-contact-item:hover {
+      background: #f8f9fa;
+      border-color: rgba(255,167,38,0.3);
+      color: var(--text-primary);
+    }
+
+    .hero-contact-item a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--text-secondary);
+    }
+
+    .hero-contact-item a:hover {
+      border-bottom: none;
+      color: var(--accent-amber);
+    }
+
+    .hero-contact-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--accent-amber);
+    }
+
+    /* ===== Section Common ===== */
+    .section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .section-alt {
+      background: var(--bg-surface);
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .section-header {
+      margin-bottom: 64px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent-amber);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      color: var(--text-primary);
+    }
+
+    .section-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--accent-amber);
+      margin-top: 24px;
+      border-radius: 2px;
+    }
+
+    /* ===== About Section ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 40px;
+      transition: all 0.4s ease;
+      box-shadow: 2px 2px 4px -2px rgba(44,62,80,0.2);
+    }
+
+    .about-card:hover {
+      border-color: rgba(255,167,38,0.3);
+      box-shadow: 2px 4px 8px -2px rgba(44,62,80,0.3);
+    }
+
+    .about-card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent-blue);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .about-card-title::before {
+      content: '';
+      width: 4px;
+      height: 20px;
+      background: var(--accent-amber);
+      border-radius: 2px;
+    }
+
+    .about-list {
+      list-style: none;
+    }
+
+    .about-list li {
+      padding: 16px 0;
+      border-bottom: 1px dashed var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 15px;
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .about-list li:last-child {
+      border-bottom: none;
+    }
+
+    .about-list li strong {
+      color: var(--text-primary);
+      font-weight: 600;
+      min-width: 100px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .skill-tag {
+      padding: 6px 14px;
+      background: rgba(44,62,80,0.05);
+      border: 1px solid rgba(44,62,80,0.15);
+      border-radius: 100px;
+      font-size: 13px;
+      color: var(--accent-blue);
+      font-weight: 500;
+    }
+
+    .skill-tag.amber {
+      background: rgba(255,167,38,0.1);
+      border-color: rgba(255,167,38,0.2);
+      color: var(--accent-amber);
+    }
+
+    .skill-tag.emerald {
+      background: rgba(39,174,96,0.1);
+      border-color: rgba(39,174,96,0.2);
+      color: var(--accent-emerald);
+    }
+
+    /* ===== Experience Section ===== */
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #ffa726, #bdc3c7);
+      border-radius: 1px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 48px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -47px;
+      top: 8px;
+      width: 14px;
+      height: 14px;
+      background: #fff;
+      border: 3px solid var(--accent-blue);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .timeline-item:first-child .timeline-dot {
+      border-color: var(--accent-amber);
+      box-shadow: 0 0 8px var(--glow-amber);
+    }
+
+    .timeline-header {
+      margin-bottom: 20px;
+    }
+
+    .timeline-company {
+      font-family: 'Syne', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .timeline-role {
+      font-size: 15px;
+      color: var(--accent-amber);
+      font-weight: 500;
+    }
+
+    .timeline-date {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .timeline-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 2px 2px 4px -2px rgba(44,62,80,0.2);
+    }
+
+    .timeline-content ul {
+      list-style: none;
+    }
+
+    .timeline-content li {
+      padding: 12px 0;
+      border-bottom: 1px dashed var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.8;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline-content li:last-child {
+      border-bottom: none;
+    }
+
+    .timeline-content li::before {
+      content: '\2192';
+      position: absolute;
+      left: 0;
+      color: var(--accent-amber);
+      font-weight: 600;
+    }
+
+    /* ===== Projects Section ===== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 2px 2px 4px -2px rgba(44,62,80,0.2);
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,167,38,0.3);
+      box-shadow: 2px 8px 12px -2px rgba(44,62,80,0.3);
+    }
+
+    .project-image {
+      height: 650px;
+      background: linear-gradient(135deg, #ecf0f1, #dde4e6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 30% 50%, rgba(255,167,38,0.1), transparent 50%),
+        radial-gradient(circle at 70% 50%, rgba(44,62,80,0.05), transparent 50%);
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-image-text {
+      position: relative;
+      z-index: 1;
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .project-body {
+      padding: 28px;
+    }
+
+    .project-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .project-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .project-features {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+
+    .project-features li {
+      padding: 8px 0;
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .project-features li::before {
+      content: '\25C6';
+      color: var(--accent-amber);
+      font-size: 8px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: rgba(255,167,38,0.1);
+      border: 1px solid rgba(255,167,38,0.2);
+      border-radius: 100px;
+      color: var(--accent-amber);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .project-link:hover {
+      background: var(--accent-amber);
+      color: #fff;
+    }
+
+    /* ===== Contact Section ===== */
+    .contact {
+      background: var(--bg-surface);
+      text-align: center;
+    }
+
+    .contact-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 32px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      transition: all 0.3s ease;
+      min-width: 240px;
+      box-shadow: 2px 2px 4px -2px rgba(44,62,80,0.2);
+    }
+
+    .contact-item:hover {
+      border-color: rgba(255,167,38,0.3);
+      transform: translateY(-4px);
+      box-shadow: 2px 6px 10px -2px rgba(44,62,80,0.3);
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, rgba(255,167,38,0.2), rgba(255,167,38,0.05));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .contact-info {
+      text-align: left;
+    }
+
+    .contact-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .contact-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .contact-value a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+
+    .contact-value a:hover {
+      color: var(--accent-amber);
+      border-bottom: none;
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      padding: 40px 0;
+      background-color: #ffa726;
+      color: #ecf0f1;
+      text-align: center;
+      box-shadow: 0 -2px 2px -1px #2c3e50;
+    }
+
+    .footer p {
+      font-size: 13px;
+      color: #ecf0f1;
+      font-weight: lighter;
+    }
+
+    .footer span {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* ===== Animations ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== Mobile Menu ===== */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      margin: 6px 0;
+      transition: all 0.3s ease;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 1024px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 2px 4px -1px rgba(44,62,80,0.2);
+        padding: 20px;
+        gap: 16px;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-photo {
+        order: -1;
+        margin-bottom: 24px;
+      }
+
+      .hero-photo img {
+        width: 180px;
+        height: 240px;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .hero-contact {
+        flex-direction: column;
+      }
+
+      .timeline {
+        padding-left: 30px;
+      }
+
+      .timeline-dot {
+        left: -37px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-item {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#home">赵<span>汶江</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">个人简介</a></li>
+        <li><a href="#experience">实习经历</a></li>
+        <li><a href="#projects">项目作品</a></li>
+
+        <li><a href="#contact">联系方式</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-label reveal">
+          <span>2027届硕士在读 · AI 工具应用与产品设计</span>
+        </div>
+        <h1 class="reveal reveal-delay-1">
+          赵<span>汶江</span>
+        </h1>
+        <p class="hero-subtitle reveal reveal-delay-2">
+          擅长AI工具应用与产品设计，让AI为效率与自动化赋能
+        </p>
+        <div class="hero-contact reveal reveal-delay-3">
+          <div class="hero-contact-item">
+            <svg class="hero-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:13808187461">13808187461</a>
+          </div>
+          <div class="hero-contact-item">
+            <svg class="hero-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            <a href="mailto:1254758454@qq.com">1254758454@qq.com</a>
+          </div>
+          <div class="hero-contact-item">
+            <svg class="hero-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+              <path d="M9 18c-4.51 2-5-2-7-2"/>
+            </svg>
+            <a href="https://github.com/marjorychase6-star" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-photo reveal reveal-delay-2">
+        <img src="static/个人照片——白底.jpg" alt="赵汶江个人照片" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label">About Me</span>
+        <h2 class="section-title">个人简介</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-card reveal reveal-delay-1">
+          <h3 class="about-card-title">教育背景</h3>
+          <ul class="about-list">
+            <li>
+              <strong>天津大学</strong>
+              <span>土木水利 硕士在读 | 2024.09-2027.06</span>
+            </li>
+            <li>
+              <strong>西南交通大学</strong>
+              <span>土木工程 学士 | 2020.09-2024.06</span>
+            </li>
+          </ul>
+        </div>
+        <div class="about-card reveal reveal-delay-2">
+          <h3 class="about-card-title">专业技能</h3>
+          <ul class="about-list">
+            <li>
+              <strong>语言能力</strong>
+              <div class="skill-tags">
+                <span class="skill-tag">英语CET6</span>
+                <span class="skill-tag">日语N2</span>
+              </div>
+            </li>
+            <li>
+              <strong>AI工具</strong>
+              <div class="skill-tags">
+                <span class="skill-tag amber">Dify</span>
+                <span class="skill-tag amber">Coze</span>
+                <span class="skill-tag amber">Codex</span>
+                <span class="skill-tag amber">Claude Code</span>
+                <span class="skill-tag amber">Cursor</span>
+                <span class="skill-tag amber">Lovable</span>
+              </div>
+            </li>
+            <li>
+              <strong>软件应用</strong>
+              <div class="skill-tags">
+                <span class="skill-tag emerald">Figma</span>
+                <span class="skill-tag emerald">Axure</span>
+                <span class="skill-tag emerald">MySQL</span>
+                <span class="skill-tag emerald">Python</span>
+                <span class="skill-tag emerald">Photoshop</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section section-alt" id="experience">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label">Experience</span>
+        <h2 class="section-title">实习经历</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <h3 class="timeline-company">杉数科技</h3>
+            <div class="timeline-role">GEO AI产品运营</div>
+            <div class="timeline-date">2026.03 - 2026.06</div>
+          </div>
+          <div class="timeline-content">
+            <ul>
+              <li>深度对接客户业务需求，构建全业务线多元知识资产管理体系，创建并优化Dify工作流支撑日常运营场景</li>
+              <li>针对原系统需为各品牌手动配置分支的痛点，使用Python语言开发基于Dify平台的自动化动态知识库检索插件，品牌接入成本降低90%</li>
+              <li>针对Prompt频繁迭代中的版本管理与效果验证瓶颈，独立设计并使用Claude Code开发Prompt管理工具PromptVault并开源于GitHub；集成版本控制、行级Diff对比、8种AI模板及实时API测试功能，将Prompt迭代测试效率提升40%</li>
+              <li>调研10+行业标杆竞品，利用AI深度解析设计风格与页面结构，输出高精准度全站构建Prompt；借助Lovable工具实现开发与迭代，上线包含产品矩阵、核心优势、客户案例及留资转化全链路的完整官方宣传页</li>
+              <li>建立"原型→PRD→标注"全流程AI辅助产品设计SOP，标准化产品设计工作流；设计3个核心Skill：画原型、生成PRD、原型标注，实现从需求输入到标注原型可视化输出的完整链路，高效落地2个核心业务线的3.0版本功能迭代</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-dot"></div>
+          <div class="timeline-header">
+            <h3 class="timeline-company">红果研教育</h3>
+            <div class="timeline-role">AI内容与增长运营</div>
+            <div class="timeline-date">2024.06 - 2024.12</div>
+          </div>
+          <div class="timeline-content">
+            <ul>
+              <li>基于Coze平台构建内容策划与客服转化双模块的内部生产力Agent，运用RAG技术挂载业务知识，提供高可信度支撑；提取学员高频痛点，设计并迭代结构化Prompt，批量生成爆款标题与推文大纲，内容产出效率提升60%</li>
+              <li>构建"共情-答疑-探单"三段式LUI工作流，通过System Prompt强制AI深度思考，平衡创造力与专业；将Agent嵌入日常运营链路，客服端辅助人工进行意图识别与话术初拟，咨询转化率提升至19%；验证"AI草拟+人工兜底"人机协同模式的商业价值，保障100%响应率</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label">Projects</span>
+        <h2 class="section-title">项目作品</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-image" style="height: 550px;">
+            <img src="static/PromptVault页面截图.png" alt="PromptVault 项目截图" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">PromptVault - Prompt版本管理工具</h3>
+            <p class="project-desc">独立设计并使用Claude Code开发的Prompt管理工具，开源于GitHub</p>
+            <ul class="project-features">
+              <li>集成版本控制、行级Diff对比、8种AI模板及实时API测试功能</li>
+              <li>Prompt迭代测试效率提升40%</li>
+              <li>支持PWA离线使用、中英文切换、深色/浅色主题</li>
+            </ul>
+            <a class="project-link" href="https://marjorychase6-star.github.io/promptvault/" target="_blank">
+              查看项目
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+          <div class="project-image">
+            <img src="static/sketchpet-screenshot.png" alt="SketchPet Observatory 待机界面" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">SketchPet — AI Agent 桌面宠物</h3>
+            <p class="project-desc">基于 Electron + React + TypeScript 开发的手绘风格 AI Agent 桌面宠物，通过 MCP 协议与 AI 客户端实时联动</p>
+            <ul class="project-features">
+              <li>实现 MCP Server，暴露 5 种工具：set_pet_state（切换宠物表情）、set_current_file（设置当前文件）、set_current_command（设置运行命令）、show_message（显示临时气泡）、add_activity_log（记录活动日志）</li>
+              <li>设计 10 种状态机（idle/thinking/reading/writing/running/error/ask/solved/busy/done）</li>
+              <li>手绘风格 UI，支持宠物模式与 Observatory 详细面板双模式切换</li>
+              <li>已完成 opencode CLI、Claude Code、Cursor 等 AI 客户端集成，实现 AI Agent 工作状态实时可视化</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+          <div class="project-image">
+            <span class="project-image-text">GEO Knowledge Base</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">GEO知识库工作流</h3>
+            <p class="project-desc">基于Dify平台的动态知识库检索插件，解决品牌知识库路由的低效问题</p>
+            <ul class="project-features">
+              <li>通过命名约定实现运行时动态发现知识库</li>
+              <li>品牌接入成本从O(n)降为O(1)</li>
+              <li>采用混合检索策略，配合Qwen3-Reranker-0.6B重排序，显著提升召回精度</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3">
+          <div class="project-image">
+            <span class="project-image-text">Product Landing Page</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">产品宣传网页</h3>
+            <p class="project-desc">使用Lovable工具制作的官方宣传页，展示产品理念与核心优势</p>
+            <ul class="project-features">
+              <li>调研10+竞品网站，利用AI深度解析设计风格与页面结构</li>
+              <li>包含产品介绍、核心优势、客户案例及留资表单</li>
+              <li>成功用于对外展示与客户获取</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="section-inner">
+      <div class="section-header reveal">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">联系方式</h2>
+        <div class="section-divider" style="margin-left: auto; margin-right: auto;"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-item reveal">
+          <div class="contact-icon">📱</div>
+          <div class="contact-info">
+            <div class="contact-label">手机</div>
+            <div class="contact-value"><a href="tel:13808187461">13808187461</a></div>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-delay-1">
+          <div class="contact-icon">📧</div>
+          <div class="contact-info">
+            <div class="contact-label">邮箱</div>
+            <div class="contact-value"><a href="mailto:1254758454@qq.com">1254758454@qq.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-delay-2">
+          <div class="contact-icon">💬</div>
+          <div class="contact-info">
+            <div class="contact-label">微信</div>
+            <div class="contact-value">zwj1254758454</div>
+          </div>
+        </div>
+        <div class="contact-item reveal reveal-delay-3">
+          <div class="contact-icon">🔗</div>
+          <div class="contact-info">
+            <div class="contact-label">GitHub</div>
+            <div class="contact-value"><a href="https://github.com/marjorychase6-star" target="_blank">marjorychase6-star</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="section-inner">
+      <p>&copy; 2026 <span>赵汶江</span> | AI 工具应用与产品设计</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Navigation scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+          navLinks.classList.remove('active');
+        }
+      });
+    });
+
+    // Reveal animations on scroll
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      revealObserver.observe(el);
+    });
+  </script>
+</body>
+</html>
