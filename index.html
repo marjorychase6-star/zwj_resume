@@ -561,6 +561,31 @@
       box-shadow: 2px 8px 12px -2px rgba(44,62,80,0.3);
     }
 
+    .project-card--featured {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(18rem, 2fr);
+      align-items: stretch;
+    }
+
+    .project-card--featured .project-image {
+      height: auto;
+      min-height: 0;
+      aspect-ratio: 16 / 10;
+      align-self: start;
+    }
+
+    .project-card--featured .project-image img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .project-card--featured .project-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .project-image {
       height: 650px;
       background: linear-gradient(135deg, #ecf0f1, #dde4e6);
@@ -852,8 +877,26 @@
         left: -37px;
       }
 
+      .about-card {
+        padding: 24px;
+        min-width: 0;
+      }
+
+      .about-list li {
+        flex-wrap: wrap;
+      }
+
       .projects-grid {
         grid-template-columns: 1fr;
+      }
+
+      .project-card--featured {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card--featured .project-image {
+        min-height: 0;
+        aspect-ratio: 16 / 10;
       }
 
       .contact-grid {
@@ -1062,6 +1105,28 @@
         <div class="section-divider"></div>
       </div>
       <div class="projects-grid">
+        <div class="project-card project-card--featured reveal">
+          <div class="project-image">
+            <img src="static/images/projects/productrelay-workspace.webp" alt="ProductRelay workspace with lifecycle navigation and AI assistant" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">ProductRelay — AI Product Execution Partner</h3>
+            <p class="project-desc">面向独立产品经理的本地 AI 产品工作台，把资料、需求、PRD、原型和交付串联为可追踪流程。</p>
+            <ul class="project-features">
+              <li>从真实资料到结构化交付的完整产品生命周期</li>
+              <li>手动确认与自动执行两种 AI 协作模式</li>
+              <li>有来源、有版本、可审计的 AI 操作</li>
+              <li>本地数据存储与系统钥匙串密钥管理</li>
+            </ul>
+            <a class="project-link" href="https://github.com/marjorychase6-star/product-relay" target="_blank" rel="noopener noreferrer">
+              View on GitHub
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
         <div class="project-card reveal">
           <div class="project-image" style="height: 550px;">
             <img src="static/PromptVault页面截图.png" alt="PromptVault 项目截图" loading="lazy">
