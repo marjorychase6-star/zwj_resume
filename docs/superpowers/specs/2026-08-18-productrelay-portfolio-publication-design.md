@@ -1,7 +1,7 @@
 # ProductRelay 重命名、作品展示与公开发布设计
 
 **日期：** 2026-08-18  
-**状态：** 待书面规格确认  
+**状态：** 已确认
 **涉及仓库：**
 
 - 产品：`/Users/zevvv/vibe_coding/Hermes/pm-hermes`
