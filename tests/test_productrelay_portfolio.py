@@ -28,16 +28,14 @@ class ProductRelayPortfolioTest(unittest.TestCase):
         self.assertIn('target="_blank" rel="noopener noreferrer"', HTML)
         self.assertTrue(IMAGE.is_file())
 
-    def test_featured_layout_has_desktop_and_mobile_rules(self) -> None:
+    def test_featured_layout_matches_standard_project_card(self) -> None:
         self.assertIn(".project-card--featured", HTML)
-        self.assertIn("grid-template-columns: minmax(0, 3fr) minmax(18rem, 2fr)", HTML)
         self.assertIn(
-            ".project-card--featured .project-image {\n      height: auto;\n      min-height: 0;\n      aspect-ratio: 16 / 10;",
+            ".project-card--featured .project-image {\n      height: auto;\n      aspect-ratio: 16 / 10;",
             HTML,
         )
-        mobile = HTML.index("@media (max-width: 768px)")
-        self.assertIn(".project-card--featured", HTML[mobile:])
-        self.assertIn("grid-template-columns: 1fr", HTML[mobile:])
+        self.assertNotIn("grid-template-columns: minmax(0, 3fr) minmax(18rem, 2fr)", HTML)
+        self.assertNotIn(".project-card--featured .project-body", HTML)
 
     def test_mobile_rules_prevent_existing_card_overflow(self) -> None:
         mobile = HTML.index("@media (max-width: 768px)")

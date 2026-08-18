@@ -561,29 +561,15 @@
       box-shadow: 2px 8px 12px -2px rgba(44,62,80,0.3);
     }
 
-    .project-card--featured {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(18rem, 2fr);
-      align-items: stretch;
-    }
-
     .project-card--featured .project-image {
       height: auto;
-      min-height: 0;
       aspect-ratio: 16 / 10;
-      align-self: start;
     }
 
     .project-card--featured .project-image img {
       height: 100%;
       object-fit: cover;
       object-position: center;
-    }
-
-    .project-card--featured .project-body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
 
     .project-image {
@@ -888,15 +874,6 @@
 
       .projects-grid {
         grid-template-columns: 1fr;
-      }
-
-      .project-card--featured {
-        grid-template-columns: 1fr;
-      }
-
-      .project-card--featured .project-image {
-        min-height: 0;
-        aspect-ratio: 16 / 10;
       }
 
       .contact-grid {
