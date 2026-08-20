@@ -8,9 +8,16 @@ ROOT = Path(__file__).parents[1]
 HTML = (ROOT / "index.html").read_text(encoding="utf-8")
 IMAGE = ROOT / "static" / "images" / "projects" / "productrelay-workspace.webp"
 REPOSITORY_URL = "https://github.com/marjorychase6-star/product-relay"
+PROMPTVAULT_REPOSITORY_URL = "https://github.com/marjorychase6-star/promptvault"
 
 
 class ProductRelayPortfolioTest(unittest.TestCase):
+    def test_promptvault_card_links_to_repository(self) -> None:
+        promptvault = HTML.index("PromptVault - Prompt版本管理工具")
+        card_end = HTML.index("</div>", promptvault)
+        card_html = HTML[promptvault:card_end]
+        self.assertIn(f'href="{PROMPTVAULT_REPOSITORY_URL}"', card_html)
+
     def test_productrelay_is_the_first_project(self) -> None:
         projects = HTML.index('id="projects"')
         productrelay = HTML.index("ProductRelay — AI Product Execution Partner", projects)
